@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oasis Studio — Salón de uñas en Lugo</title>
+<meta name="description" content="Oasis Studio, salón de uñas en Lugo. Manicura semipermanente, refuerzo, extensiones y pedicura spa. 5,0 en Booksy con 56 reseñas. Reserva por WhatsApp o Booksy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #09402d;
+    --verde-2: #0d5139;
+    --verde-claro: #e3ece6;
+    --oro: #c9b26a;
+    --oro-osc: #a68f45;
+    --crema: #f7f3ea;
+    --blanco: #fffdf8;
+    --tinta: #1f2a24;
+    --gris: #6c766f;
+    --linea: rgba(9,64,45,.14);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--crema); color: var(--tinta); line-height: 1.7; overflow-x: hidden; }
+  h1, h2, h3 { font-family: 'Josefin Sans', sans-serif; font-weight: 300; letter-spacing: 2px; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  header {
+    position: fixed; inset: 0 0 auto 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 6%; background: rgba(9,64,45,.96); backdrop-filter: blur(8px); color: var(--blanco);
+  }
+  .marca { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+  .marca svg { width: 26px; height: 12px; margin-bottom: 3px; }
+  .marca b { font-family: 'Josefin Sans', sans-serif; font-weight: 300; font-size: 1.55rem; letter-spacing: 5px; color: var(--oro); }
+  .marca small { font-family: 'Josefin Sans', sans-serif; font-size: .5rem; letter-spacing: 4px; color: var(--oro); margin-top: 2px; }
+  nav ul { list-style: none; display: flex; gap: 30px; align-items: center; }
+  nav a { font-size: .74rem; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,253,248,.75); transition: color .2s; }
+  nav a:hover { color: var(--oro); }
+  nav .nav-cta { color: var(--verde); background: var(--oro); padding: 9px 18px; font-weight: 600; border-radius: 30px; }
+  nav .nav-cta:hover { color: var(--verde); background: #dcc785; }
+
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+  .hero-txt { background: var(--verde); color: var(--blanco); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 8% 70px; position: relative; overflow: hidden; }
+  .hero-txt::before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; border: 1px solid rgba(201,178,106,.18); top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .hero-txt::after { content: ""; position: absolute; width: 680px; height: 680px; border-radius: 50%; border: 1px solid rgba(201,178,106,.09); top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .hero-logo { width: min(380px, 78%); position: relative; z-index: 1; }
+  .hero-txt h1 { font-size: 1rem; font-weight: 400; letter-spacing: 6px; text-transform: uppercase; color: var(--oro); margin: 4px 0 16px; position: relative; z-index: 1; }
+  .hero-txt p { font-weight: 300; color: rgba(255,253,248,.85); max-width: 420px; margin-bottom: 32px; position: relative; z-index: 1; }
+  .botones { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--oro); color: var(--verde); padding: 15px 30px; font-weight: 600; font-size: .78rem; letter-spacing: 2px; text-transform: uppercase; border-radius: 40px; transition: background .2s, transform .2s; }
+  .btn:hover { background: #dcc785; transform: translateY(-2px); }
+  .btn-linea { background: transparent; color: var(--blanco); border: 1px solid rgba(201,178,106,.6); }
+  .btn-linea:hover { background: rgba(201,178,106,.12); }
+  .btn-verde { background: var(--verde); color: var(--blanco); }
+  .btn-verde:hover { background: var(--verde-2); }
+  .hero-foto { position: relative; }
+  .hero-foto img { width: 100%; height: 100%; object-fit: cover; }
+  .sello { position: absolute; left: -62px; bottom: 70px; width: 124px; height: 124px; border-radius: 50%; background: var(--crema); border: 1px solid var(--oro); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 16px 40px rgba(0,0,0,.18); }
+  .sello b { font-family: 'Josefin Sans', sans-serif; font-weight: 400; font-size: 2.1rem; color: var(--verde); line-height: 1; }
+  .sello span { font-size: .62rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gris); margin-top: 4px; }
+  .sello i { font-style: normal; color: var(--oro-osc); font-size: .8rem; letter-spacing: 2px; }
+
+  .franja { background: var(--blanco); border-bottom: 1px solid var(--linea); display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 38px; padding: 18px 20px; font-size: .8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); }
+  .franja b { color: var(--verde); font-weight: 600; }
+
+  section { padding: 100px 6%; max-width: 1180px; margin: 0 auto; }
+  .titulillo { display: block; text-align: center; font-size: .72rem; letter-spacing: 5px; text-transform: uppercase; color: var(--oro-osc); margin-bottom: 10px; font-weight: 600; }
+  .titulo { text-align: center; font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: 54px; line-height: 1.15; color: var(--verde); }
+
+  .sobre { display: grid; grid-template-columns: 1fr 1.1fr; gap: 70px; align-items: center; }
+  .sobre img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 200px 200px 8px 8px; }
+  .sobre h2 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.15; color: var(--verde); margin-bottom: 20px; }
+  .sobre h2 em { font-style: normal; color: var(--oro-osc); }
+  .sobre p { color: #46524b; font-weight: 300; margin-bottom: 16px; }
+  .ventajas { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 26px; }
+  .ventajas div { background: var(--blanco); border: 1px solid var(--linea); border-radius: 12px; padding: 14px 16px; font-size: .88rem; display: flex; gap: 10px; align-items: center; }
+  .ventajas span { color: var(--oro-osc); font-size: 1.1rem; }
+
+  .fondo-verde { background: var(--verde); color: var(--blanco); }
+  .fondo-verde .titulo { color: var(--blanco); }
+  .fondo-verde .titulillo { color: var(--oro); }
+  .carta { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .bloque { background: rgba(255,255,255,.04); border: 1px solid rgba(201,178,106,.28); border-radius: 18px; padding: 32px 30px; }
+  .bloque h3 { font-size: 1.5rem; color: var(--oro); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 4px; font-weight: 400; }
+  .fila { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .fila:last-child { border-bottom: 0; }
+  .fila small { display: block; color: rgba(255,253,248,.6); font-size: .8rem; line-height: 1.5; margin-top: 2px; }
+  .fila b { font-family: 'Josefin Sans', sans-serif; font-size: 1.3rem; font-weight: 400; white-space: nowrap; color: var(--oro); }
+  .fila .top { display: inline-block; font-size: .6rem; letter-spacing: 1.5px; text-transform: uppercase; background: var(--oro); color: var(--verde); padding: 1px 8px; border-radius: 20px; margin-left: 6px; vertical-align: 2px; font-weight: 600; }
+  .nota-carta { text-align: center; margin-top: 34px; color: rgba(255,253,248,.75); font-weight: 300; }
+
+  .galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .galeria img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; transition: transform .4s; }
+  .galeria img:hover { transform: scale(1.03); }
+
+  .opiniones { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .op { background: var(--blanco); border: 1px solid var(--linea); border-radius: 18px; padding: 30px 30px 26px; }
+  .op .est { color: var(--oro-osc); letter-spacing: 3px; margin-bottom: 10px; }
+  .op p { font-family: 'Josefin Sans', sans-serif; font-size: 1.2rem; font-weight: 300; line-height: 1.5; color: var(--tinta); margin-bottom: 14px; }
+  .op cite { font-style: normal; color: var(--gris); font-size: .8rem; letter-spacing: 1px; }
+
+  .info { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .horario { width: 100%; border-collapse: collapse; }
+  .horario td { padding: 13px 4px; border-bottom: 1px solid var(--linea); }
+  .horario td:last-child { text-align: right; color: #46524b; }
+  .horario tr.cerrado td:last-child { color: #a3aaa5; }
+  .dir { margin-top: 22px; color: #46524b; }
+  .dir b { color: var(--verde); font-weight: 600; }
+  .mapa { border-radius: 18px; overflow: hidden; border: 1px solid var(--linea); }
+  .mapa img { width: 100%; }
+
+  .cta { text-align: center; padding: 100px 6%; background: var(--verde-claro); }
+  .cta h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--verde); line-height: 1.1; margin-bottom: 14px; }
+  .cta p { color: #46524b; max-width: 470px; margin: 0 auto 30px; font-weight: 300; }
+  .cta .botones .btn-linea { color: var(--verde); border-color: var(--verde); }
+
+  footer { text-align: center; padding: 26px 6%; background: var(--verde); color: rgba(255,253,248,.6); font-size: .8rem; }
+
+  .wa-flotante { position: fixed; right: 22px; bottom: 22px; z-index: 120; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 25px rgba(0,0,0,.25); }
+  .wa-flotante svg { width: 30px; height: 30px; fill: #fff; }
+
+  @media (max-width: 900px) {
+    nav ul li:not(:last-child) { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: 0; }
+    .hero-txt { padding: 120px 7% 64px; }
+    .hero-foto { height: 360px; }
+    .sello { left: auto; right: 18px; bottom: 18px; width: 106px; height: 106px; }
+    .sello b { font-size: 1.8rem; }
+    .sobre, .carta, .info, .opiniones { grid-template-columns: 1fr; }
+    .sobre { gap: 44px; }
+    .galeria { grid-template-columns: repeat(2, 1fr); }
+    .ventajas { grid-template-columns: 1fr; }
+    section { padding: 76px 6%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="marca" href="#inicio" aria-label="Oasis Studio">
+    <svg viewBox="0 0 26 12" fill="none" stroke="#c9b26a" stroke-width="1"><path d="M3 11a10 10 0 0 1 20 0M13 0v4M6 2.5l2 3M20 2.5l-2 3M1 6.5l3 2M25 6.5l-3 2"/></svg>
+    <b>OASIS</b><small>STUDIO</small>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="#estudio">Estudio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#trabajos">Trabajos</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a class="nav-cta" href="https://wa.me/34667514105" target="_blank" rel="noopener">Pedir cita</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero" id="inicio">
+  <div class="hero-txt">
+    <img class="hero-logo" src="img/logo.jpg" alt="Logotipo de Oasis Studio">
+    <h1>Salón de uñas · Lugo</h1>
+    <p>Manicura, extensiones y pedicura con un acabado limpio, elegante y que dura. Tu momento de calma en el centro de Lugo.</p>
+    <div class="botones">
+      <a class="btn" href="https://wa.me/34667514105" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      <a class="btn btn-linea" href="#servicios">Ver precios</a>
+    </div>
+  </div>
+  <div class="hero-foto">
+    <img src="img/gel.jpg" alt="Aplicación de gel en una uña en Oasis Studio">
+    <div class="sello"><i>★★★★★</i><b>5,0</b><span>56 reseñas</span></div>
+  </div>
+</div>
+
+<div class="franja">
+  <span><b>★ 5,0</b> en Booksy</span>
+  <span>56 reseñas · <b>todas de 5 estrellas</b></span>
+  <span>Rúa Nazario Abel, Lugo</span>
+</div>
+
+<section id="estudio">
+  <div class="sobre">
+    <img src="img/unas_10.jpg" alt="Uñas largas en tono burdeos">
+    <div>
+      <span class="titulillo" style="text-align:left;">El estudio</span>
+      <h2>Uñas bonitas<br><em>que duran todo el mes</em></h2>
+      <p>En Oasis Studio cuidamos tus manos y tus pies con calma y con mimo. Preparamos bien la uña, trabajamos la cutícula con cuidado y usamos productos de calidad para que el resultado aguante semanas perfecto.</p>
+      <p>Si quieres recuperar tus uñas naturales, la <b style="color:var(--verde); font-weight:600;">manicura con refuerzo</b> es nuestro servicio estrella: nuestras clientas lo repiten mes tras mes.</p>
+      <div class="ventajas">
+        <div><span>✦</span> Productos de calidad</div>
+        <div><span>✦</span> Programa de fidelidad</div>
+        <div><span>✦</span> Diseños a tu gusto</div>
+        <div><span>✦</span> Se admiten mascotas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="fondo-verde">
+<section id="servicios">
+  <span class="titulillo">Carta de servicios</span>
+  <h2 class="titulo">Servicios y precios</h2>
+  <div class="carta">
+    <div class="bloque">
+      <h3>Manicura</h3>
+      <div class="fila"><div>Manicura con refuerzo <span class="top">Top</span><small>Preparación, forma, cutículas y esmaltado · 1 h</small></div><b>26 €</b></div>
+      <div class="fila"><div>Manicura semipermanente<small>Esmalte de larga duración, acabado brillante · 45 min</small></div><b>22 €</b></div>
+      <div class="fila"><div>Manicura tradicional<small>Cutículas, hidratación y esmaltado tradicional · 25 min</small></div><b>18 €</b></div>
+      <div class="fila"><div>Manicura limpieza<small>Limado, forma y cutículas, sin esmalte · 25 min</small></div><b>14 €</b></div>
+    </div>
+    <div class="bloque">
+      <h3>Extensiones</h3>
+      <div class="fila"><div>Extensión de uñas S<small>1 h 20 min</small></div><b>40 €</b></div>
+      <div class="fila"><div>Extensión de uñas M<small>1 h 45 min</small></div><b>45 €</b></div>
+      <div class="fila"><div>Extensión de uñas L<small>2 h</small></div><b>50 €</b></div>
+    </div>
+    <div class="bloque">
+      <h3>Pedicura</h3>
+      <div class="fila"><div>Pedicura spa<small>Baño tibio, exfoliación, durezas, masaje y esmaltado · 1 h 15 min</small></div><b>32 €</b></div>
+      <div class="fila"><div>Pedicura limpieza<small>40 min</small></div><b>27 €</b></div>
+      <div class="fila"><div>Pedicura esmaltado<small>Limpieza, cutículas y semipermanente · 30 min</small></div><b>24 €</b></div>
+    </div>
+    <div class="bloque">
+      <h3>Depilación</h3>
+      <div class="fila"><div>Depilación de cejas<small>30 min</small></div><b>10 €</b></div>
+      <div class="fila"><div>Depilación de labio<small>30 min</small></div><b>6 €</b></div>
+    </div>
+  </div>
+  <p class="nota-carta">¿Quieres un diseño especial? Escríbenos con una foto y te decimos precio y tiempo.</p>
+</section>
+</div>
+
+<section id="trabajos">
+  <span class="titulillo">Nuestro trabajo</span>
+  <h2 class="titulo">Trabajos recientes</h2>
+  <div class="galeria">
+    <img src="img/unas_1.jpg" alt="Manicura en tono azul cromado">
+    <img src="img/unas_2.jpg" alt="Uñas cortas en burdeos">
+    <img src="img/unas_3.jpg" alt="Manicura roja con diseño floral">
+    <img src="img/unas_8.jpg" alt="Uñas cuadradas en rosa natural">
+    <img src="img/unas_6.jpg" alt="Manicura nude con purpurina">
+    <img src="img/unas_5.jpg" alt="Diseño en verde oscuro">
+    <img src="img/unas_9.jpg" alt="Francesa en uñas largas">
+    <img src="img/unas_7.jpg" alt="Pedicura francesa">
+  </div>
+</section>
+
+<div style="background:var(--verde-claro);">
+<section id="opiniones">
+  <span class="titulillo">Opiniones</span>
+  <h2 class="titulo">Lo que dicen nuestras clientas</h2>
+  <div class="opiniones">
+    <div class="op"><div class="est">★★★★★</div><p>“Super buen servicio, eran las uñas para mi boda y quedaron preciosas, mil gracias.”</p><cite>— Eva, clienta verificada en Booksy</cite></div>
+    <div class="op"><div class="est">★★★★★</div><p>“Enamorada del trabajo que hacen. Gracias por devolverme mis uñitas naturales.”</p><cite>— Yosma, clienta verificada en Booksy</cite></div>
+    <div class="op"><div class="est">★★★★★</div><p>“Varias veces con ellas y siempre encantada con el trato y el resultado, y los productos de 10.”</p><cite>— Tatiana, clienta verificada en Booksy</cite></div>
+    <div class="op"><div class="est">★★★★★</div><p>“Me ha encantado la experiencia, Mary hizo un trabajo perfecto y muy profesional.”</p><cite>— Cintia, clienta verificada en Booksy</cite></div>
+  </div>
+</section>
+</div>
+
+<section id="ubicacion">
+  <span class="titulillo">Visítanos</span>
+  <h2 class="titulo">Horario y ubicación</h2>
+  <div class="info">
+    <div>
+      <table class="horario">
+        <tr class="cerrado"><td>Lunes</td><td>Cerrado</td></tr>
+        <tr><td>Martes</td><td>10:00 – 14:00 · 17:00 – 20:00</td></tr>
+        <tr><td>Miércoles</td><td>10:00 – 14:00 · 17:00 – 20:00</td></tr>
+        <tr><td>Jueves</td><td>10:00 – 14:00 · 17:00 – 20:00</td></tr>
+        <tr><td>Viernes</td><td>10:00 – 14:00 · 17:00 – 20:00</td></tr>
+        <tr><td>Sábado</td><td>10:00 – 14:00</td></tr>
+        <tr class="cerrado"><td>Domingo</td><td>Cerrado</td></tr>
+      </table>
+      <p class="dir"><b>Rúa Nazario Abel, 86</b> · 27004 Lugo</p>
+      <p class="dir">Tel / WhatsApp: <b>667 51 41 05</b></p>
+    </div>
+    <div class="mapa"><img src="img/map.png" alt="Mapa de Oasis Studio en Lugo"></div>
+  </div>
+</section>
+
+<div class="cta">
+  <span class="titulillo">Reserva</span>
+  <h2>Date un momento para ti</h2>
+  <p>Escríbenos por WhatsApp o reserva directamente en Booksy y elige el hueco que mejor te venga.</p>
+  <div class="botones">
+    <a class="btn btn-verde" href="https://wa.me/34667514105" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+    <a class="btn btn-linea" href="https://booksy.com/es-es/158962_oasisstudio_salon-de-unas_62673_lugo" target="_blank" rel="noopener">Reservar en Booksy</a>
+  </div>
+</div>
+
+<footer>© 2026 Oasis Studio · Rúa Nazario Abel, 86, Lugo</footer>
+
+<a class="wa-flotante" href="https://wa.me/34667514105" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.09c-.24.68-1.43 1.3-1.97 1.35-.5.05-.98.24-3.3-.69-2.79-1.1-4.56-3.95-4.7-4.13-.13-.18-1.12-1.49-1.12-2.85s.71-2.02.97-2.3c.25-.27.55-.34.73-.34h.53c.17 0 .4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.13-.28.28-.12.55.16.27.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.2 1.36.27.14.43.12.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.6-.14.25.09 1.58.75 1.85.88.27.14.45.2.52.32.07.11.07.66-.17 1.33z"/></svg>
+</a>
+
+</body>
+</html>
